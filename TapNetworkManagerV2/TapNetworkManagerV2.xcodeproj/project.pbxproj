@@ -1,0 +1,483 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2154F998206FCFC2F7FC634F /* Pods_TapNetworkManagerV2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FE69644B71B171E0B6FAD86 /* Pods_TapNetworkManagerV2.framework */; };
+		E88D20FC251A0E5E00EC11A9 /* TapNetworkManagerV2.h in Headers */ = {isa = PBXBuildFile; fileRef = E88D20FA251A0E5E00EC11A9 /* TapNetworkManagerV2.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E8B737A1251A0EC1002A5190 /* TapNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B7378F251A0EC1002A5190 /* TapNetworkManager.swift */; };
+		E8B737A2251A0EC1002A5190 /* TapNetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B73790251A0EC1002A5190 /* TapNetworkError.swift */; };
+		E8B737A3251A0EC1002A5190 /* TapJSONSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B73791251A0EC1002A5190 /* TapJSONSerializer.swift */; };
+		E8B737A4251A0EC1002A5190 /* TapDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B73792251A0EC1002A5190 /* TapDecoder.swift */; };
+		E8B737A5251A0EC1002A5190 /* TapURLModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B73793251A0EC1002A5190 /* TapURLModel.swift */; };
+		E8B737A6251A0EC1002A5190 /* TapSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B73794251A0EC1002A5190 /* TapSerializer.swift */; };
+		E8B737A7251A0EC1002A5190 /* TapSerializationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B73795251A0EC1002A5190 /* TapSerializationType.swift */; };
+		E8B737A8251A0EC1002A5190 /* TapURLSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B73796251A0EC1002A5190 /* TapURLSerializer.swift */; };
+		E8B737A9251A0EC1002A5190 /* TapPropertyListSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B73797251A0EC1002A5190 /* TapPropertyListSerializer.swift */; };
+		E8B737AA251A0EC1002A5190 /* TapHTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B73798251A0EC1002A5190 /* TapHTTPMethod.swift */; };
+		E8B737AB251A0EC1002A5190 /* TapBodyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B73799251A0EC1002A5190 /* TapBodyModel.swift */; };
+		E8B737AC251A0EC1002A5190 /* TapEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B7379A251A0EC1002A5190 /* TapEncoder.swift */; };
+		E8B737AD251A0EC1002A5190 /* TapNetworkRequestOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B7379B251A0EC1002A5190 /* TapNetworkRequestOperation.swift */; };
+		E8B737AE251A0EC1002A5190 /* TapImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B7379D251A0EC1002A5190 /* TapImageLoader.swift */; };
+		E8B737AF251A0EC1002A5190 /* TapNetworkReachabilityStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B7379F251A0EC1002A5190 /* TapNetworkReachabilityStatus.swift */; };
+		E8B737B0251A0EC1002A5190 /* TapReachabilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B737A0251A0EC1002A5190 /* TapReachabilityManager.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		2FE69644B71B171E0B6FAD86 /* Pods_TapNetworkManagerV2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TapNetworkManagerV2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		631397C728C54C1C73F9B9AA /* Pods-TapNetworkManagerV2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TapNetworkManagerV2.debug.xcconfig"; path = "Target Support Files/Pods-TapNetworkManagerV2/Pods-TapNetworkManagerV2.debug.xcconfig"; sourceTree = "<group>"; };
+		DD7704654C65627EA50DC020 /* Pods-TapNetworkManagerV2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TapNetworkManagerV2.release.xcconfig"; path = "Target Support Files/Pods-TapNetworkManagerV2/Pods-TapNetworkManagerV2.release.xcconfig"; sourceTree = "<group>"; };
+		E88D20F7251A0E5E00EC11A9 /* TapNetworkManagerV2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TapNetworkManagerV2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E88D20FA251A0E5E00EC11A9 /* TapNetworkManagerV2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TapNetworkManagerV2.h; sourceTree = "<group>"; };
+		E88D20FB251A0E5E00EC11A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E8B7378F251A0EC1002A5190 /* TapNetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TapNetworkManager.swift; sourceTree = "<group>"; };
+		E8B73790251A0EC1002A5190 /* TapNetworkError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TapNetworkError.swift; sourceTree = "<group>"; };
+		E8B73791251A0EC1002A5190 /* TapJSONSerializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TapJSONSerializer.swift; sourceTree = "<group>"; };
+		E8B73792251A0EC1002A5190 /* TapDecoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TapDecoder.swift; sourceTree = "<group>"; };
+		E8B73793251A0EC1002A5190 /* TapURLModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TapURLModel.swift; sourceTree = "<group>"; };
+		E8B73794251A0EC1002A5190 /* TapSerializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TapSerializer.swift; sourceTree = "<group>"; };
+		E8B73795251A0EC1002A5190 /* TapSerializationType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TapSerializationType.swift; sourceTree = "<group>"; };
+		E8B73796251A0EC1002A5190 /* TapURLSerializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TapURLSerializer.swift; sourceTree = "<group>"; };
+		E8B73797251A0EC1002A5190 /* TapPropertyListSerializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TapPropertyListSerializer.swift; sourceTree = "<group>"; };
+		E8B73798251A0EC1002A5190 /* TapHTTPMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TapHTTPMethod.swift; sourceTree = "<group>"; };
+		E8B73799251A0EC1002A5190 /* TapBodyModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TapBodyModel.swift; sourceTree = "<group>"; };
+		E8B7379A251A0EC1002A5190 /* TapEncoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TapEncoder.swift; sourceTree = "<group>"; };
+		E8B7379B251A0EC1002A5190 /* TapNetworkRequestOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TapNetworkRequestOperation.swift; sourceTree = "<group>"; };
+		E8B7379D251A0EC1002A5190 /* TapImageLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TapImageLoader.swift; sourceTree = "<group>"; };
+		E8B7379F251A0EC1002A5190 /* TapNetworkReachabilityStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TapNetworkReachabilityStatus.swift; sourceTree = "<group>"; };
+		E8B737A0251A0EC1002A5190 /* TapReachabilityManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TapReachabilityManager.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E88D20F4251A0E5E00EC11A9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2154F998206FCFC2F7FC634F /* Pods_TapNetworkManagerV2.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2A500DB9F4B1C2F9B0CE35CE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				631397C728C54C1C73F9B9AA /* Pods-TapNetworkManagerV2.debug.xcconfig */,
+				DD7704654C65627EA50DC020 /* Pods-TapNetworkManagerV2.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		74EECA372194A66474AB498C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2FE69644B71B171E0B6FAD86 /* Pods_TapNetworkManagerV2.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E88D20ED251A0E5E00EC11A9 = {
+			isa = PBXGroup;
+			children = (
+				E88D20F9251A0E5E00EC11A9 /* TapNetworkManagerV2 */,
+				E88D20F8251A0E5E00EC11A9 /* Products */,
+				2A500DB9F4B1C2F9B0CE35CE /* Pods */,
+				74EECA372194A66474AB498C /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		E88D20F8251A0E5E00EC11A9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E88D20F7251A0E5E00EC11A9 /* TapNetworkManagerV2.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E88D20F9251A0E5E00EC11A9 /* TapNetworkManagerV2 */ = {
+			isa = PBXGroup;
+			children = (
+				E88D20FA251A0E5E00EC11A9 /* TapNetworkManagerV2.h */,
+				E88D20FB251A0E5E00EC11A9 /* Info.plist */,
+				E8B7378D251A0EC1002A5190 /* Source */,
+			);
+			path = TapNetworkManagerV2;
+			sourceTree = "<group>";
+		};
+		E8B7378D251A0EC1002A5190 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				E8B7378E251A0EC1002A5190 /* Core */,
+				E8B7379C251A0EC1002A5190 /* ImageLoading */,
+				E8B7379E251A0EC1002A5190 /* Reachability */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		E8B7378E251A0EC1002A5190 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				E8B7378F251A0EC1002A5190 /* TapNetworkManager.swift */,
+				E8B73790251A0EC1002A5190 /* TapNetworkError.swift */,
+				E8B73791251A0EC1002A5190 /* TapJSONSerializer.swift */,
+				E8B73792251A0EC1002A5190 /* TapDecoder.swift */,
+				E8B73793251A0EC1002A5190 /* TapURLModel.swift */,
+				E8B73794251A0EC1002A5190 /* TapSerializer.swift */,
+				E8B73795251A0EC1002A5190 /* TapSerializationType.swift */,
+				E8B73796251A0EC1002A5190 /* TapURLSerializer.swift */,
+				E8B73797251A0EC1002A5190 /* TapPropertyListSerializer.swift */,
+				E8B73798251A0EC1002A5190 /* TapHTTPMethod.swift */,
+				E8B73799251A0EC1002A5190 /* TapBodyModel.swift */,
+				E8B7379A251A0EC1002A5190 /* TapEncoder.swift */,
+				E8B7379B251A0EC1002A5190 /* TapNetworkRequestOperation.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		E8B7379C251A0EC1002A5190 /* ImageLoading */ = {
+			isa = PBXGroup;
+			children = (
+				E8B7379D251A0EC1002A5190 /* TapImageLoader.swift */,
+			);
+			path = ImageLoading;
+			sourceTree = "<group>";
+		};
+		E8B7379E251A0EC1002A5190 /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				E8B7379F251A0EC1002A5190 /* TapNetworkReachabilityStatus.swift */,
+				E8B737A0251A0EC1002A5190 /* TapReachabilityManager.swift */,
+			);
+			path = Reachability;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		E88D20F2251A0E5E00EC11A9 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E88D20FC251A0E5E00EC11A9 /* TapNetworkManagerV2.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		E88D20F6251A0E5E00EC11A9 /* TapNetworkManagerV2 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E88D20FF251A0E5E00EC11A9 /* Build configuration list for PBXNativeTarget "TapNetworkManagerV2" */;
+			buildPhases = (
+				3152F54AC0BFB143FAC08626 /* [CP] Check Pods Manifest.lock */,
+				E88D20F2251A0E5E00EC11A9 /* Headers */,
+				E88D20F3251A0E5E00EC11A9 /* Sources */,
+				E88D20F4251A0E5E00EC11A9 /* Frameworks */,
+				E88D20F5251A0E5E00EC11A9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TapNetworkManagerV2;
+			productName = TapNetworkManagerV2;
+			productReference = E88D20F7251A0E5E00EC11A9 /* TapNetworkManagerV2.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E88D20EE251A0E5E00EC11A9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1200;
+				TargetAttributes = {
+					E88D20F6251A0E5E00EC11A9 = {
+						CreatedOnToolsVersion = 12.0;
+					};
+				};
+			};
+			buildConfigurationList = E88D20F1251A0E5E00EC11A9 /* Build configuration list for PBXProject "TapNetworkManagerV2" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E88D20ED251A0E5E00EC11A9;
+			productRefGroup = E88D20F8251A0E5E00EC11A9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E88D20F6251A0E5E00EC11A9 /* TapNetworkManagerV2 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E88D20F5251A0E5E00EC11A9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3152F54AC0BFB143FAC08626 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TapNetworkManagerV2-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E88D20F3251A0E5E00EC11A9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E8B737AE251A0EC1002A5190 /* TapImageLoader.swift in Sources */,
+				E8B737AF251A0EC1002A5190 /* TapNetworkReachabilityStatus.swift in Sources */,
+				E8B737AA251A0EC1002A5190 /* TapHTTPMethod.swift in Sources */,
+				E8B737A1251A0EC1002A5190 /* TapNetworkManager.swift in Sources */,
+				E8B737AB251A0EC1002A5190 /* TapBodyModel.swift in Sources */,
+				E8B737A6251A0EC1002A5190 /* TapSerializer.swift in Sources */,
+				E8B737AC251A0EC1002A5190 /* TapEncoder.swift in Sources */,
+				E8B737A3251A0EC1002A5190 /* TapJSONSerializer.swift in Sources */,
+				E8B737B0251A0EC1002A5190 /* TapReachabilityManager.swift in Sources */,
+				E8B737A8251A0EC1002A5190 /* TapURLSerializer.swift in Sources */,
+				E8B737A5251A0EC1002A5190 /* TapURLModel.swift in Sources */,
+				E8B737AD251A0EC1002A5190 /* TapNetworkRequestOperation.swift in Sources */,
+				E8B737A7251A0EC1002A5190 /* TapSerializationType.swift in Sources */,
+				E8B737A9251A0EC1002A5190 /* TapPropertyListSerializer.swift in Sources */,
+				E8B737A4251A0EC1002A5190 /* TapDecoder.swift in Sources */,
+				E8B737A2251A0EC1002A5190 /* TapNetworkError.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		E88D20FD251A0E5E00EC11A9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		E88D20FE251A0E5E00EC11A9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		E88D2100251A0E5E00EC11A9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 631397C728C54C1C73F9B9AA /* Pods-TapNetworkManagerV2.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = G46S76PUH4;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = TapNetworkManagerV2/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = tap.TapNetworkManagerV2;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E88D2101251A0E5E00EC11A9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DD7704654C65627EA50DC020 /* Pods-TapNetworkManagerV2.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = G46S76PUH4;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = TapNetworkManagerV2/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = tap.TapNetworkManagerV2;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E88D20F1251A0E5E00EC11A9 /* Build configuration list for PBXProject "TapNetworkManagerV2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E88D20FD251A0E5E00EC11A9 /* Debug */,
+				E88D20FE251A0E5E00EC11A9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E88D20FF251A0E5E00EC11A9 /* Build configuration list for PBXNativeTarget "TapNetworkManagerV2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E88D2100251A0E5E00EC11A9 /* Debug */,
+				E88D2101251A0E5E00EC11A9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E88D20EE251A0E5E00EC11A9 /* Project object */;
+}
