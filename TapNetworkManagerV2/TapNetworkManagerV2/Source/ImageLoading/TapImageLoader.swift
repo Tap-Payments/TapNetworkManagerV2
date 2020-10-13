@@ -6,12 +6,9 @@
 //
 
 import CoreGraphics
-import class	SDWebImage.SDImageCache.SDImageCache
-import class	SDWebImage.SDWebImageDownloader.SDWebImageDownloader
-import struct	SDWebImage.SDWebImageDownloader.SDWebImageDownloaderOptions
-import class	SDWebImage.SDWebImageManager.SDWebImageManager
 import class	TapAdditionsKitV2.URLSession
 import class	UIKit.UIImage.UIImage
+import Kingfisher
 
 /// Image loader.
 public class TapImageLoader {
@@ -248,85 +245,77 @@ public class TapImageLoader {
                 }
                 return
             }
-
-            let progressClosure: (Int, Int, URL?) -> Void = { (bytesLoaded, bytesExpectedToLoad, _) in
-
-                let cgfloatProgress = CGFloat(bytesLoaded) / CGFloat(bytesExpectedToLoad)
-
+            
+            let completionClosure:(Result<ImageLoadingResult, KingfisherError>) -> Void = { result in
+                var detectedError:Error? = nil
+                var image:UIImage? = nil
+                
+                switch result {
+                case .success(let value):
+                    image = value.image
+                case .failure(let error):
+                    detectedError = error
+                }
+                
+                
+                if let nonnullImage = image {
+                    self.save(nonnullImage, toCacheWith: url)
+                }
+                
                 if loadImageSynchronously {
-
-                    progress?(url, cgfloatProgress)
-
+                    
+                    completion?(url, image, detectedError)
+                    
                 } else {
-
+                    
                     DispatchQueue.main.async {
-
+                        
+                        completion?(url, image, detectedError)
+                    }
+                }
+                
+            }
+            
+            let progressClosure:DownloadProgressBlock = {
+                receivedSize, totalSize in
+                let cgfloatProgress = CGFloat(receivedSize) / CGFloat(totalSize)
+                
+                if loadImageSynchronously {
+                    
+                    progress?(url, cgfloatProgress)
+                    
+                } else {
+                    
+                    DispatchQueue.main.async {
+                        
                         progress?(url, cgfloatProgress)
                     }
                 }
             }
-
-            let completionClosure: (UIImage?, Data?, Swift.Error?, Bool) -> Void = { (image, imageData, error, finished) in
-
-                if let nonnullImage = image {
-
-                    self.save(nonnullImage, toCacheWith: url)
-                }
-
-                if loadImageSynchronously {
-
-                    completion?(url, image, error)
-
-                } else {
-
-                    DispatchQueue.main.async {
-
-                        completion?(url, image, error)
-                    }
-                }
-            }
-
-            let imageDownloader = SDWebImageDownloader.shared
-            imageDownloader.config.downloadTimeout = Constants.timeoutInterval
-            imageDownloader.config.maxConcurrentDownloads = 10
-
-            _ = imageDownloader.downloadImage(with: url, options: SDWebImageDownloaderOptions.useNSURLCache, progress: progressClosure, completed: completionClosure)
+            
+            let imageDownloader = ImageDownloader.default
+            imageDownloader.downloadTimeout  = Constants.timeoutInterval
+            imageDownloader.downloadImage(with: url, options: [.fromMemoryCacheOrRefresh,.cacheOriginalImage], progressBlock: progressClosure,completionHandler: completionClosure)
+            //_ = imageDownloader.downloadImage(with: url, options: SDWebImageDownloaderOptions.useNSURLCache, progress: progressClosure, completed: completionClosure)
         }
     }
 
     private func save(_ image: UIImage, toCacheWith url: URL) {
-
-        let key = SDWebImageManager.shared.cacheKey(for: url)
-
-        SDImageCache.shared.store(image, forKey: key)
-
-        guard let imagePath = SDImageCache.shared.cachePath(forKey: key), let modificationDate = self.fileUpdateDate(at: url) else { return }
-
-        let attributes = [FileAttributeKey.modificationDate: modificationDate]
-
-        do {
-
-            try FileManager.default.setAttributes(attributes, ofItemAtPath: imagePath)
-
-        } catch let error as NSError {
-
-            print(error.localizedDescription)
-        }
+        let cache = ImageCache.default
+        let key = cache.hash(forKey: url.absoluteString)
+        cache.store(image, forKey: key)
+        cache.memoryStorage.config.expiration = .seconds(60)
     }
 
     private func loadImageFromCache(with url: URL) -> UIImage? {
-
-        let key = SDWebImageManager.shared.cacheKey(for: url)
-        let sharedCache = SDImageCache.shared
-
-        var shouldLoadFromCache = false
-
-        if sharedCache.diskImageDataExists(withKey: key) {
-
-            shouldLoadFromCache = !self.shouldDownloadFile(from: url, withExistingFilePath: sharedCache.cachePath(forKey: key))
+        let cache = ImageCache.default
+        let key = cache.hash(forKey: url.absoluteString)
+        
+        guard cache.isCached(forKey: key), let cachedImage:UIImage = cache.retrieveImageInMemoryCache(forKey: key) else {
+            return nil
         }
-
-        return shouldLoadFromCache ? sharedCache.imageFromDiskCache(forKey: key) : nil
+        
+        return cachedImage
     }
 
     private func loadImageFromCache(with url: URL, synchronously: Bool, completion: @escaping (UIImage?) -> Void) {
