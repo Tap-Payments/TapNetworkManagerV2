@@ -6,7 +6,6 @@ target 'TapNetworkManagerV2' do
   use_frameworks!
 
   # Pods for TapNetworkManagerV2
-    pod 'SwiftLint'
     pod 'TapAdditionsKitV2'
     pod 'Kingfisher'
 end
