@@ -7,5 +7,4 @@ target 'TapNetworkManagerV2' do
 
   # Pods for TapNetworkManagerV2
     pod 'TapAdditionsKitV2'
-    pod 'Kingfisher'
 end

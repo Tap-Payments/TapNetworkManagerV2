@@ -1,7 +1,4 @@
 PODS:
-  - Kingfisher (5.15.7):
-    - Kingfisher/Core (= 5.15.7)
-  - Kingfisher/Core (5.15.7)
   - TapAdditionsKitV2 (0.0.7):
     - TapSwiftFixesV2
   - TapSwiftFixesV2 (1.0.0):
@@ -13,20 +10,17 @@ PODS:
   - TapSwiftFixesV2/Threading (1.0.0)
 
 DEPENDENCIES:
-  - Kingfisher
   - TapAdditionsKitV2
 
 SPEC REPOS:
   trunk:
-    - Kingfisher
     - TapAdditionsKitV2
     - TapSwiftFixesV2
 
 SPEC CHECKSUMS:
-  Kingfisher: 6e1a13523fcb1c86924ce53affe4ac957e544d59
   TapAdditionsKitV2: 89a0ef85d6aa659ff3102b632914466924ce3ccb
   TapSwiftFixesV2: a8623a7273c6790b9754ec7e272e96fce7d3a800
 
-PODFILE CHECKSUM: 19c3e504a1bc2cba4e0bead4b03e578790315bdb
+PODFILE CHECKSUM: 975e096fc63e456258147fbf721d4e5fcd0171e5
 
 COCOAPODS: 1.9.3

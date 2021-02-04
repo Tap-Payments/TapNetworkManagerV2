@@ -8,7 +8,6 @@
 import CoreGraphics
 import class	TapAdditionsKitV2.URLSession
 import class	UIKit.UIImage.UIImage
-import Kingfisher
 
 /// Image loader.
 public class TapImageLoader {
@@ -226,110 +225,24 @@ public class TapImageLoader {
         }
     }
 
+    
+    private func getData(from url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
+        URLSession.shared.dataTask(with: url, completionHandler: completion).resume()
+    }
+    
     private func downloadImage(from url: URL, loadCacheSynchronously: Bool, loadImageSynchronously: Bool, progress: ((URL, CGFloat) -> Void)?, completion: ((URL, UIImage?, Error?) -> Void)?) {
 
-        self.loadImageFromCache(with: url, synchronously: loadCacheSynchronously) { (image) in
-
-            if image != nil {
-
-                if loadCacheSynchronously {
-
-                    completion?(url, image, nil)
-
-                } else {
-
-                    DispatchQueue.main.async {
-
-                        completion?(url, image, nil)
-                    }
-                }
+        
+        getData(from: url) { data, response, error in
+            guard error == nil else {
+                completion?(url,nil,error)
                 return
             }
-            
-            let completionClosure:(Result<ImageLoadingResult, KingfisherError>) -> Void = { result in
-                var detectedError:Error? = nil
-                var image:UIImage? = nil
-                
-                switch result {
-                case .success(let value):
-                    image = value.image
-                case .failure(let error):
-                    detectedError = error
-                }
-                
-                
-                if let nonnullImage = image {
-                    self.save(nonnullImage, toCacheWith: url)
-                }
-                
-                if loadImageSynchronously {
-                    
-                    completion?(url, image, detectedError)
-                    
-                } else {
-                    
-                    DispatchQueue.main.async {
-                        
-                        completion?(url, image, detectedError)
-                    }
-                }
-                
+            guard let data = data else {
+                completion?(url,nil,NSError(domain: "tap.company", code: 0, userInfo: [NSLocalizedDescriptionKey: "Unable to fetch the image"]))
+                return
             }
-            
-            let progressClosure:DownloadProgressBlock = {
-                receivedSize, totalSize in
-                let cgfloatProgress = CGFloat(receivedSize) / CGFloat(totalSize)
-                
-                if loadImageSynchronously {
-                    
-                    progress?(url, cgfloatProgress)
-                    
-                } else {
-                    
-                    DispatchQueue.main.async {
-                        
-                        progress?(url, cgfloatProgress)
-                    }
-                }
-            }
-            
-            let imageDownloader = ImageDownloader.default
-            imageDownloader.downloadTimeout  = Constants.timeoutInterval
-            imageDownloader.downloadImage(with: url, options: [.fromMemoryCacheOrRefresh,.cacheOriginalImage], progressBlock: progressClosure,completionHandler: completionClosure)
-            //_ = imageDownloader.downloadImage(with: url, options: SDWebImageDownloaderOptions.useNSURLCache, progress: progressClosure, completed: completionClosure)
-        }
-    }
-
-    private func save(_ image: UIImage, toCacheWith url: URL) {
-        let cache = ImageCache.default
-        let key = cache.hash(forKey: url.absoluteString)
-        cache.store(image, forKey: key)
-        cache.memoryStorage.config.expiration = .seconds(60)
-    }
-
-    private func loadImageFromCache(with url: URL) -> UIImage? {
-        let cache = ImageCache.default
-        let key = cache.hash(forKey: url.absoluteString)
-        
-        guard cache.isCached(forKey: key), let cachedImage:UIImage = cache.retrieveImageInMemoryCache(forKey: key) else {
-            return nil
-        }
-        
-        return cachedImage
-    }
-
-    private func loadImageFromCache(with url: URL, synchronously: Bool, completion: @escaping (UIImage?) -> Void) {
-
-        if synchronously {
-
-            completion(self.loadImageFromCache(with: url))
-
-        } else {
-
-            self.imageLoadingQueue.addOperation {
-
-                completion(self.loadImageFromCache(with: url))
-            }
+            completion?(url,UIImage(data: data),nil)
         }
     }
 }
