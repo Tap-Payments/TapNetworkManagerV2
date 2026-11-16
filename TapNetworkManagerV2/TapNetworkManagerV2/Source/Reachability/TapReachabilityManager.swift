@@ -5,6 +5,7 @@
 //  Copyright © 2019 Tap Payments. All rights reserved.
 //
 
+import Foundation
 import struct Darwin.POSIX.netinet.`in`.sockaddr_in
 import var Darwin.POSIX.sys.socket.AF_INET
 import struct Darwin.POSIX.sys.socket.sockaddr
