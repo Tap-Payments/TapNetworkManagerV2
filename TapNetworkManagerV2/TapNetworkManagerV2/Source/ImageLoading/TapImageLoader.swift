@@ -5,8 +5,9 @@
 //  Copyright © 2019 Tap Payments. All rights reserved.
 //
 
+import Foundation
 import CoreGraphics
-import class    TapAdditionsKitV2.URLSession
+import TapAdditionsKitV2
 import class    UIKit.UIImage.UIImage
 
 /// Image loader.
